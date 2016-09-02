@@ -1,0 +1,23 @@
+<div class="authform">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <fieldset>
+    <div class="form-group">
+      <%= f.email_field :email, autofocus: true, placeholder: "email address", class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.password_field :password, autocomplete: "off", placeholder: "password", class: "form-control"%>
+    </div>
+    <div class="checkbox">
+      <label>
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </label>
+    </div>
+    <!-- Change this to a button or input when using this as a form -->
+    <div class="actions">
+      <%= f.submit "Log in", class: "btn btn-sm btn-success" %>
+    </div>
+    <%= render "devise/shared/links" %>
+  </fieldset>
+  <% end %>
+</div>
